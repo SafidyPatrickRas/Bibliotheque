@@ -18,6 +18,7 @@ import jakarta.validation.Valid;
 @Controller
 @RequestMapping("/profils")
 public class ProfilController {
+    
     @Autowired
     private ProfilService profilService;
 
