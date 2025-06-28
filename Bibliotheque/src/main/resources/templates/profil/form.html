@@ -1,5 +1,5 @@
 
-<h2 th:text="${profil.id == null ? 'Ajouter' : 'Modifier'} + ' une profil'"></h2>
+<h2 th:text="${profil.id == null ? 'Ajouter' : 'Modifier'} + ' un profil'"></h2>
 <form th:action="@{/profils}" th:object="${profil}" method="post">
     <input type="hidden" th:if="${profil.id != null}" th:field="*{id}" >
     <label>Nom :</label>
