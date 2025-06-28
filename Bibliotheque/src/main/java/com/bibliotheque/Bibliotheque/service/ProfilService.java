@@ -17,8 +17,8 @@ public class ProfilService {
         return profilRepository.findAll();
     }
 
-    public void save(Profil product) {
-        profilRepository.save(product);
+    public void save(Profil profil) {
+        profilRepository.save(profil);
     }
 
     public Profil getById(Long id) {
