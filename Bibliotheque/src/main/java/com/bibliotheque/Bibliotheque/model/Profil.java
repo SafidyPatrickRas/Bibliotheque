@@ -1,5 +1,6 @@
 package com.bibliotheque.Bibliotheque.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,6 +15,7 @@ public class Profil {
     private Long id;
 
     @NotBlank(message = "Le nom de profil est obligatoire")
+    @Column(unique = true)
     private String nom;
 
     public Long getId() {
