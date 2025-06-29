@@ -26,6 +26,10 @@
     <input type="number" th:field="*{nbrValidite}" id="validite" />
     <span th:errors="*{nbrValidite}" style="color:red"></span><br>
 
+    <label for="prix">Prix :</label>
+    <input type="number" th:field="*{prix}" id="prix" />
+    <span th:errors="*{prix}" style="color:red"></span><br>
+
     <button type="submit">Valider</button>
 </form>
 
