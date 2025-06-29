@@ -25,6 +25,10 @@ public class AuthentificationService {
         return authentificationRepository.findById(id).orElse(null);
     }
 
+    public Authentification getByEmail(String email){
+        return authentificationRepository.findByEmail(email).orElse(null);
+    }
+
     public void delete(Long id) {
         authentificationRepository.deleteById(id);
     }

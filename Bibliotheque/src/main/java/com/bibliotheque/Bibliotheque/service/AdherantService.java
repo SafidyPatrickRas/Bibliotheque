@@ -1,6 +1,7 @@
 package com.bibliotheque.Bibliotheque.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,5 +29,15 @@ public class AdherantService {
 
     public void delete(Long id) {
         adherantRepository.deleteById(id);
+    }
+
+    public Adherant findByAuthentificationId(Long id){
+        Optional<Adherant> adherantOpt = adherantRepository.findByAuthentificationId(id); 
+        
+        if(adherantOpt.isPresent()){
+            return adherantOpt.get();
+        }
+
+        return null;
     }
 }
