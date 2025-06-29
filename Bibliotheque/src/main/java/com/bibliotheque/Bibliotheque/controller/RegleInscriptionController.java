@@ -46,6 +46,7 @@ public class RegleInscriptionController {
     public String save(@Valid @ModelAttribute RegleInscription regleInscription, BindingResult result, Model model , RedirectAttributes redirectAttributes) {
         if (result.hasErrors()) {
             model.addAttribute("page", "regle_inscription/form");
+            model.addAttribute("profils" , profilService.getAll());
             return "template";
         }
         if(regleInscription.getId()!=null){

@@ -6,6 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class RegleInscription {
@@ -14,10 +16,12 @@ public class RegleInscription {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Min(value = 1, message = "La durée de validité doit être au minimum de 1")
     private int nbrValidite;
 
     @OneToOne
     @JoinColumn(name = "profil_id", referencedColumnName = "id", unique = true, nullable = false)
+    @NotNull(message = "Le profil est obligatoire")
     private Profil profil;
 
     public Long getId() {
