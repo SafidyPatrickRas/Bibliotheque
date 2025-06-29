@@ -23,7 +23,7 @@
     <span th:errors="*{profil}" style="color:red"></span><br>
 
     <label for="validite">Validité :</label>
-    <input type="text" th:field="*{nbrValidite}" id="validite" />
+    <input type="number" th:field="*{nbrValidite}" id="validite" />
     <span th:errors="*{nbrValidite}" style="color:red"></span><br>
 
     <button type="submit">Valider</button>
