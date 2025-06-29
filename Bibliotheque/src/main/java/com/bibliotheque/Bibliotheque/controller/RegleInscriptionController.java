@@ -72,7 +72,7 @@ public class RegleInscriptionController {
     @GetMapping("/edit/{id}")
     public String editForm(@PathVariable Long id, Model model) {
         RegleInscription regleInscription = regleInscriptionService.getById(id);
-        if (regleInscription == null) return "redirect:/profils";
+        if (regleInscription == null) return "redirect:/regle_inscription";
         model.addAttribute("regleInscription", regleInscription);
         model.addAttribute("profils" , profilService.getAll());
         model.addAttribute("page", "regle_inscription/form");
