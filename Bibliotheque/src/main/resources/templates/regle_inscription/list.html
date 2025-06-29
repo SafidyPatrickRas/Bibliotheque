@@ -1,7 +1,7 @@
 <h2>Profils</h2>
 <a th:href="@{/regles_inscription/new}">Ajouter une profil</a>
 <table border="1">
-    <tr><th>Profil</th><th>Nombre de validiter</th></tr>
+    <tr><th>Profil</th><th>Nombre de validité</th></tr>
     <tr th:each="regleInscription : ${reglesInscription}">
         <td th:text="${regleInscription.profil.nom}"></td>
         <td th:text="${regleInscription.nbrValidite}"></td>
