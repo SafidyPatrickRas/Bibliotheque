@@ -1,0 +1,21 @@
+<h2>Inscription de pret</h2>
+
+<form th:action="@{/inscriptions}" th:object="${inscription}" method="post">
+    <div>
+        <label for="date_insription">Date d inscription</label>
+        <input type="date" name="date_insription" id="date_insription" th:field="*{date_inscription}">
+    </div>
+
+    <label for="adherant">Choisissez un adhérant :</label>
+<input list="liste-adherants" name="adherantId" id="adherantId" />
+
+<datalist id="liste-adherants">
+  <option th:each="a : ${adherants}"
+          th:value="${a.id}"
+          th:text="${a.authentification.email}" />
+</datalist>
+<!-- Champ caché pour envoyer l’ID de l’adhérant sélectionné -->
+<input type="hidden" name="adherantId" id="adherantId" />
+
+    <button type="submit">Valider</button>
+</form>
