@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.bibliotheque.Bibliotheque.model.Adherant;
 import com.bibliotheque.Bibliotheque.model.Inscription;
 import com.bibliotheque.Bibliotheque.model.Profil;
 import com.bibliotheque.Bibliotheque.model.RegleInscription;
@@ -24,6 +25,13 @@ public class InscriptionService {
 
     public void inscription(Inscription inscription){
         // Axistence adherant
+        Adherant ad = adherantService.getById(inscription.getAdherant().getId());
+
+        if(ad!=null){
+            System.out.println("adherant existant");
+        }else{
+            System.out.println("adherant non existant");
+        }
 
         // Existence regle inscription de son profil 
 

@@ -24,7 +24,7 @@ import jakarta.validation.Valid;
 @RequestMapping("/adherant")
 public class AdherantController {
 
-     @Autowired
+    @Autowired
     InscriptionAdherantFormService inscriptionAdherantFormService;
 
     @Autowired
