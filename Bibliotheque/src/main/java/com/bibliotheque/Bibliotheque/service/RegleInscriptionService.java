@@ -1,10 +1,12 @@
 package com.bibliotheque.Bibliotheque.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bibliotheque.Bibliotheque.model.Profil;
 import com.bibliotheque.Bibliotheque.model.RegleInscription;
 import com.bibliotheque.Bibliotheque.repository.RegleInscriptionRepository;
 
@@ -41,5 +43,15 @@ public class RegleInscriptionService {
 
     public void delete(Long id) {
         regleInscriptionRepository.deleteById(id);
+    }
+
+    public RegleInscription getByProfil(Profil profil){
+        Optional<RegleInscription> regOptional = regleInscriptionRepository.findByProfil(profil);
+        
+        if(regOptional.isPresent()){
+            return regOptional.get();
+        }
+        return null;
+    
     }
 }
