@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bibliotheque.Bibliotheque.model.Profil;
+
 import com.bibliotheque.Bibliotheque.model.RegleInscription;
 import com.bibliotheque.Bibliotheque.repository.RegleInscriptionRepository;
 
@@ -34,7 +35,7 @@ public class RegleInscriptionService {
 
     }
 
-    public void update(RegleInscription regleInscription) {
+    public void update(RegleInscription regleInscription){
         regleInscriptionRepository.save(regleInscription);
     }
 
